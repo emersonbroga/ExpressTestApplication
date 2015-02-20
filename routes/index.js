@@ -36,9 +36,7 @@ router.post('/', function(req, res, next) {
       	'Connection': 'keep-alive',
       	'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.10; rv:35.0) Gecko/20100101 Firefox/35.0',
       	'Content-Length': post_data.length,
-      	/*'api-key': apikey,*/
-      	/*'Authorization': 'Basic ' + new Buffer(username + ':' + apikey, 'utf8').toString('base64')*/
-    	}
+      	}
 	};
 	// set up the request
 	var post_req = http.request(post_options, function(response) {
@@ -59,7 +57,7 @@ router.post('/', function(req, res, next) {
 	  	res.render('index', { title: 'Express', response: e.message});
 	});
 	post_req.end();
-
+	
 	console.log(post_req);
 });
 
