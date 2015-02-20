@@ -26,3 +26,8 @@ node_modules
 
 # Users Environment Variables
 .lock-wscript
+
+#project
+.vagrant
+config/config.json
+node_modules

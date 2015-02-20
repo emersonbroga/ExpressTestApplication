@@ -1,0 +1,24 @@
+extends layout
+
+block content
+  div.container
+    h1 #{title}
+    p Welcome to #{title}
+
+    if response
+      div.row
+        #{response}
+    else
+      div.row
+        form(action="/", method="post")
+          div.form-group
+            label(for="Email") Email
+              input.form-control(type="text", name="Email", value="hoiyin@melissadata.co")
+          div.form-group
+            label(for="MaximumSuggestions") Maximum Suggestions
+              input.form-control(type="number", name="MaximumSuggestions", value="3")
+          div.form-group
+            label(for="MinimumConfidence") Minimum Confidence
+              input.form-control(type="number", name="MinimumConfidence", value="0")
+          div.form-group
+            input.btn.btn-default(type="submit", value="Check")
