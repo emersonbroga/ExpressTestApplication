@@ -1,19 +1,36 @@
 extends layout
 
 block content
+  
+  if result
+  
+  endif
+
   div.container
     h1 #{title}
     p Welcome to #{title}
 
-    if response
+    if error
+      p.error
+        Error: #{error}
+    endif
+
+    if result
       div.row
-        #{response}
+        p <strong>Confidence</strong>: #{result.confidence}
+        p <strong>Results</strong>: #{result.results}
+        p <strong>Domain</strong>: #{result.domain}
+        p <strong>Mail Box</strong>: #{result.mailBox}
+        p <strong>Top Level Domain</strong>: #{result.topLevelDomain}
+        p <strong>Top Level Domain Description</strong>: #{result.topLevelDomainDescription}
+        p <strong>Email</strong>: #{result.email}
+        <a href="/">try again</a>
     else
       div.row
         form(action="/", method="post")
           div.form-group
             label(for="Email") Email
-              input.form-control(type="text", name="Email", value="hoiyin@melissadata.co")
+              input.form-control(type="text", name="Email", autocomplete="off")
           div.form-group
             label(for="MaximumSuggestions") Maximum Suggestions
               input.form-control(type="number", name="MaximumSuggestions", value="3")
@@ -22,3 +39,4 @@ block content
               input.form-control(type="number", name="MinimumConfidence", value="0")
           div.form-group
             input.btn.btn-default(type="submit", value="Check")
+    endif

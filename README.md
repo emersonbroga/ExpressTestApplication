@@ -14,7 +14,7 @@ npm install
 DEBUG=vagrant:* ./bin/www
 ```
 
-On your browser go to ```http://192.168.22.47:3000/```
+On your browser go to ```http://192.168.22.47:3000/```.
 
 
 ### Config file
