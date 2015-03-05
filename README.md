@@ -18,5 +18,7 @@ On your browser go to ```http://192.168.22.47:3000/```.
 
 
 ### Config file
-copy the config/config.json.dist to config/config.json and set your credentials.
 
+```
+copy the config/config.json.dist to config/config.json and set your credentials.
+```
